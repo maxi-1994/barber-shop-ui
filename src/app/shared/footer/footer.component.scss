@@ -1,0 +1,23 @@
+footer {
+  width: 100vw;
+  height: 39vh;
+  color: #AEBAC1;
+  font-size: 18px;
+  font-weight: 500;
+  background: #303030;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+    ul {
+      list-style: none;
+      text-align: center;
+      margin: 0;
+
+        .phone-number {
+          font-size: 25px;
+          color: #FFFFFF;
+        }
+    }
+}
+

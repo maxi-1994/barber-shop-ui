@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  @Input() public isAdmin: boolean = false;
+  public title: string = '';
+
   constructor() { }
 
   ngOnInit(): void {
+    this.title = this.isAdmin ? 'Barber Shop Admin' : 'Barber Shop App';
   }
 
 }

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -17,11 +16,9 @@ import { NopagefoundComponent } from './nopagefound/nopagefound.component';
     HeaderComponent,
     FooterComponent,
     NopagefoundComponent,
-    MatToolbarModule,
   ],
   imports: [
     CommonModule,
-    MatToolbarModule
   ]
 })
 export class SharedModule { }
