@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'; // Eliminar si no se usa
 
 import { AuthModule } from './auth/auth.module';
 import { AdminDashboardModule } from './admin-dashboard/admin-dashboard.module';
@@ -21,6 +22,7 @@ import { AppComponent } from './app.component';
     AuthModule,
     AdminDashboardModule,
     MainPageModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
