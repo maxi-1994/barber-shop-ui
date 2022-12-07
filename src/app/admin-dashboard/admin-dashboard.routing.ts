@@ -19,7 +19,6 @@ const routes: Routes = [
       { path: 'tabla-barberos', component: BarbersTableComponent, data: { title: 'Barberos' } },
       { path: 'tabla-servicios', component: ServicesTableComponent, data: { title: 'Servicios' } },
       { path: 'tabla-usuarios', component: UsersTableComponent, data: { title: 'Usuarios' } },
-
     ],
   },
 ];

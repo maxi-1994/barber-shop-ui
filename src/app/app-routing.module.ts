@@ -11,6 +11,8 @@ import { NopagefoundComponent } from './shared/nopagefound/nopagefound.component
 const routes: Routes = [
   { path: '', component: MainPageComponent, redirectTo: '', pathMatch: 'full' },
   { path: '**', component: NopagefoundComponent },
+  // AuthRoutingModule
+  // DashboardRoutingModule
 ];
 
 @NgModule({

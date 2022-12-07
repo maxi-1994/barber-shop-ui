@@ -1,1 +1,131 @@
-<p>appointments-form works!</p>
+<div class="form-stepper-content">
+  <mat-stepper
+    class="example-stepper"
+    [orientation]="(stepperOrientation | async)!" style="background-color: #FFF;">
+    <!-- ================================================================ -->
+    <!-- ========================= Service Form ========================= -->
+    <!-- ================================================================ -->
+    <mat-step [stepControl]="servicesForm" label="Service Form">
+      <form [formGroup]="servicesForm">
+        <div class="form-check">
+          <input class="form-check-input pointer" type="radio" name="service" id="serviceSelection1" value="corte" formControlName="service" checked>
+          <label class="form-check-label pointer" for="serviceSelection1">
+            Corte
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input pointer" type="radio" name="service" id="serviceSelection2" value="afeitado" formControlName="service">
+          <label class="form-check-label pointer" for="serviceSelection2">
+            Afeitado
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input pointer" type="radio" name="service" id="serviceSelection3" value="corteyafeitado" formControlName="service">
+          <label class="form-check-label pointer" for="serviceSelection3">
+            Corte y Afeitado
+          </label>
+        </div>
+        <div>
+          <button mat-button matStepperNext>Siguiente</button>
+        </div>
+      </form>
+    </mat-step>
+    <!-- ===================================================================== -->
+    <!-- ========================= Professional Form ========================= -->
+    <!-- ===================================================================== -->
+    <mat-step [stepControl]="professionalsForm" label="Professional Form">
+      <form [formGroup]="professionalsForm">
+        <div class="form-check">
+          <input class="form-check-input pointer" type="radio" name="professional" id="professionalSelection1" value="Primero/a Disponible" formControlName="professional" checked>
+          <label class="form-check-label pointer" for="professionalSelection1">
+            Primero/a Disponible
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input pointer" type="radio" name="professional" id="professionalSelection2" value="Juan Chorizo" formControlName="professional">
+          <label class="form-check-label pointer" for="professionalSelection2">
+            Juan Chorizo
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input pointer" type="radio" name="professional" id="professionalSelection3" value="Matias Diaz" formControlName="professional">
+          <label class="form-check-label pointer" for="professionalSelection3">
+            Matias Diaz
+          </label>
+        </div>
+        <div>
+          <button mat-button matStepperPrevious>Anterior</button>
+          <button mat-button matStepperNext>Siguiente</button>
+        </div>
+      </form>
+    </mat-step>
+    <!-- ============================================================= -->
+    <!-- ========================= Date Form ========================= -->
+    <!-- ============================================================= -->
+    <mat-step label=" Date Form"> 
+      <mat-form-field>
+        <input matInput [ngxMatDatetimePicker]="picker" placeholder="Choose a date" [formControl]="dateControl"
+          [min]="minDate" [max]="maxDate" [disabled]="disabled">
+        <mat-datepicker-toggle matSuffix [for]="$any(picker)"></mat-datepicker-toggle>
+        <ngx-mat-datetime-picker #picker [showSpinners]="showSpinners" [showSeconds]="showSeconds"
+          [stepHour]="stepHour" [stepMinute]="stepMinute" [stepSecond]="stepSecond" [touchUi]="touchUi"
+          [color]="color" [enableMeridian]="enableMeridian">
+        </ngx-mat-datetime-picker>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </mat-step>
+    <!-- ==================================================================== -->
+    <!-- ========================= Client Info Form ========================= -->
+    <!-- ==================================================================== -->
+    <mat-step label="Client Info Form" [stepControl]="clientForm"> 
+      <form [formGroup]="clientForm">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label for="nameInput"><span style="color: red;">*</span>Nombre y Apellido:</label>
+              <input type="text" class="form-control" id="nameInput" placeholder="Nombre" formControlName="clientName" require>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="emailInput"><span style="color: red;">*</span>Email:</label>
+          <input type="email" class="form-control" id="emailInput" placeholder="Email" formControlName="clientEmail" require>
+        </div>
+        <div class="form-group">
+          <label for="phoneInput"><span style="color: red;">*</span>Teléfono:</label>
+          <input type="number" class="form-control" id="phoneInput" placeholder="Teléfono" formControlName="clientNumber" require>
+        </div>
+        <div class="form-group">
+          <label for="commentInput">Comentario:</label>
+          <textarea class="form-control" id="commentInput" rows="3" formControlName="clientComment"></textarea>
+        </div>
+      </form>
+      <div>
+        <button mat-button matStepperPrevious>Anterior</button>
+        <button mat-button matStepperNext>Siguiente</button>
+      </div>
+    </mat-step>
+    <!-- ==================================================================== -->
+    <!-- ========================= Client Info Form ========================= -->
+    <!-- ==================================================================== -->
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      <p>You are now done.</p>
+      <div>
+        <button mat-button matStepperPrevious (click)="getFormValues()">Done</button>
+      </div>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+      </div>
+    </mat-step>
+  </mat-stepper>
+</div>
+
+
+<!-- 
+  https://demo.mobiscroll.com/angular/calendar/appointment-booking#
+-->
+
